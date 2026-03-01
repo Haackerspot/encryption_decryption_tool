@@ -1,121 +1,168 @@
-🔐 Advanced Password Encryption & Decryption Tool
+🔐 Encryption & Decryption Tool (Python GUI)
 
-A production-style Python security tool that demonstrates secure password encryption, hashing, and cryptographic best practices used in real-world authentication systems.
+A simple yet powerful Encryption & Decryption Tool built using Python, Tkinter, and Fernet symmetric encryption from the cryptography library.
 
-📌 About The Project
+This tool allows users to:
+  Encrypt & decrypt text messages
+  Encrypt & decrypt files
+  Generate and manage encryption keys
+  Use a clean and modern dark-themed GUI
 
-This project is built to demonstrate:
+📌 Features
 
-     Secure password encryption using industry-standard cryptography
 
-     Secure password hashing using strong hashing algorithms
+🔑 Key Management
 
-     Key generation and management concepts
+    Generate a secure encryption key (secret.key)
+    Automatically load the key for encryption/decryption
+    Error handling if key is missing
 
-     Defensive security programming practices
+📝 Text Encryption & Decryption
 
-The tool is designed for educational, cybersecurity training, and portfolio purposes.
+    Encrypt plain text into secure cipher text
+    Decrypt cipher text back into readable text
+    Real-time output display inside GUI
+    Validation and error handling
 
-🚀 Features
-🔐 Encryption Module
+📂 File Encryption & Decryption
 
-    AES-based symmetric encryption (Fernet)
+    Encrypt selected files securely
+    Decrypt encrypted files
+    Works with any file type (text, images, PDFs, etc.)
+    Overwrites the selected file after encryption/decryption
+
+🎨 User Interface
+
+    Built with Tkinter
+    Dark theme UI
+    Interactive message boxes
+    Clean layout design
+
+
+🛠️ Technologies Used
+
+    Python 3.x
+    Tkinter (GUI)
+    cryptography library
+    Fernet symmetric encryption
+
+
+🔐 About Fernet Encryption
+
+This tool uses Fernet symmetric encryption provided by the cryptography library.
+Fernet guarantees:
+
+    Confidentiality
+    Integrity
+    Authentication
     Secure key generation
-    Base64 encoded ciphertext
-    Safe decryption process
 
-🔑 Hashing Module
+Encryption type used:
 
-    Secure password hashing using bcrypt
-    Automatic salting
-    Secure password verification
-    Resistant to brute-force attacks
+    Symmetric Key Encryption
+    Same key is used for encryption and decryption
+    
 
-🛡 Security-Focused Design
+📦 Installation
+Step 1: Clone the Repository
+git clone https://github.com/Haackerspot/encryption_decryption_tool
+cd encryption-decryption-tool
 
-    No plain-text password storage
-    Modular architecture
-    Proper error handling
-    Clean CLI interface
+Step 2: Install Required Library
+pip install cryptography
 
-🧠 Security Concepts Demonstrated
+Tkinter is pre-installed with Python in most systems.
 
-    Symmetric Encryption (AES)
-    Hashing vs Encryption
-    Salting
-    Secure Key Management
-    Credential Protection  
-    Authentication Security Principles
+🚀 How to Run
+python encryption_decryption_tool.py
+🖥️ How It Works
+1️⃣ Generate Key
 
-📂 Project Structure
-password-crypto-tool/
+    Click Generate Key
+    A file named secret.key will be created
+    This key is required for encryption & decryption
+
+⚠️ Keep this file safe. If lost, encrypted data cannot be recovered.
+
+
+2️⃣ Encrypt Text
+
+    Enter text in input box
+    Click Encrypt Text
+    Encrypted output appears below
+
+3️⃣ Decrypt Text
+
+    Paste encrypted text
+    Click Decrypt Text
+    Original message will appear
+
+4️⃣ Encrypt File
+
+    Click Encrypt File
+    Select a file
+    File will be encrypted
+
+5️⃣ Decrypt File
+
+    Click Decrypt File
+    Select encrypted file
+    File will be restored
+
+📁 Project Structure
+encryption-decryption-tool/
 │
-├── main.py
-├── encryption.py
-├── hashing.py
-├── key_manager.py
+├── encryption_decryption_tool.py
+├── secret.key (generated after key creation)
 └── README.md
 
 
-⚙️ Installation
-   1️⃣ Clone Repository
-       git clone https://github.com/Haackerspot/encryption_decryption_too)/
-       cd password-crypto-tool
-       
-   2️⃣ Install Dependencies
-       pip install cryptography bcrypt
-       
-   3️⃣ Run Application
-       python main.py
-       
-📊 Example Output
-    Encryption
-    Enter password to encrypt: SecurePass@123
-    Encrypted Password: gAAAAABmX...
-Hashing
-    Enter password to hash: SecurePass@123
-    Hashed Output: $2b$12$...
-    password Verified Successfully
+⚠️ Important Notes
 
+    The tool overwrites files during encryption and decryption.
+    Always keep a backup of important files.
+    Do NOT share your secret.key file.
+    If the key is lost, encrypted files cannot be recovered.
+
+🔒 Security Considerations
+
+    Uses industry-standard Fernet encryption
+    Secure random key generation
+    Error handling for invalid keys
+    Safe exception management
+
+💡 Future Improvements (Optional Ideas)
+
+    Add password-based key generation
+    Add drag & drop file support
+    Add file backup before encryption
+    Convert into executable (.exe)
+    Add progress bar for large files
+    Add key export/import system
     
-🔍 Encryption vs Hashing
-      Purpose	                        Recommended Method
-      
-      Secure data storage (reversible)	Encryption
-      Password authentication	        Hashing
-      Database credential storage	    Hashing (bcrypt)
-      Secure communication              Encryption
 
-      
-🛡 Security Best Practices Followed
+📸 Preview
 
-    Uses trusted cryptographic libraries
-    Avoids custom cryptographic algorithms
-    Strong hashing (bcrypt)
-    No hardcoded secrets (recommended practice)
-    Clear separation of encryption and hashing logic
+ GUI includes:
+    Text input area
+    Encrypt/Decrypt buttons
+    File encryption section
+    Key generation option
+    Dark-themed modern interface
 
-⚠ Important Security Notes
 
-    Never expose encryption keys publicly.
-    Do not hardcode keys in production.
-    Use environment variables or secure vaults for key storage.
-    For enterprise systems, use HSM or managed key services.
-    
-📈 Future Improvements
+🤝 Contributing
 
-    Add Argon2 hashing
-    Implement RSA (asymmetric encryption)
-    Add GUI interface
-    Create REST API version
-    Integrate database support
-    Docker deployment
-    Add automated security tests
+Contributions are welcome!
+   Fork the repository
+   Create a new branch
+   Commit your changes
+   Submit a Pull Request
+   
 
-🎯 Ideal For
+📜 License
+   This project is open-source and available under the MIT License.
 
-    Cybersecurity students
-    Ethical hacking beginners
-    Python security developers
-    Internship portfolios
-    Final-year projects
+👨‍💻 Developer
+
+Developed with ❤️ in Python.
